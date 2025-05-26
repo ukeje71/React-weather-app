@@ -1,2 +1,17 @@
 @import "tailwindcss";
 /* linear-gradient(45deg-#2f4680 to #500ae4)*/
+.light_theme {
+  --primary-color: #302ae6;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg: #fff;
+  --heading: #292922; 
+}
+
+.Dark_theme {
+  --primary-color: #9a97f3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg: #161625;
+  --heading: #818cab;
+}
