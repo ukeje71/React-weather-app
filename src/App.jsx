@@ -1,12 +1,15 @@
-import React from 'react'
-import Weather from './components/Weather'
+import React from "react";
+import Weather from "./components/Weather";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 const App = () => {
   return (
     <div>
-      <Weather/>
+      <ThemeProvider>
+        <Weather />
+      </ThemeProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

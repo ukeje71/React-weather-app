@@ -1,11 +1,15 @@
-import { Import, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import wind from "../assets/Wind (2).png";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import cold from "../assets/HumIcon.png";
 import { useState } from "react";
 import { useRef } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const Weather = () => {
+  // Dark mode
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   const [weatherData, setWeatherData] = useState(false);
   const inputRef = useRef();
   const search = async (city) => {
@@ -37,7 +41,11 @@ const Weather = () => {
   }, []);
   return (
     <>
-      <div className="w-full flex h-screen items-center justify-center ">
+      <div
+        className="w-full flex h-screen items-center justify-center "
+        style={{ backgroundColor: theme == "Light" ? "white" : "grey" }}
+      >
+        <button onClick={toggleTheme} className="text-blue-900 font-extrabold">{theme}</button>
         <div className="p-6 rounded-2xl bg-gradient-to-r from-[#2f4680] to-[#500ae4] ">
           <form action="#" className="mt-5 flex gap-2">
             <input
